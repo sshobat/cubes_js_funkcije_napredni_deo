@@ -62,18 +62,46 @@ function Players(name, age, goals, cards) {
 
 var players = [['Diego Maradona', 28, 12, 4], ['Leo Messi', 27, 14, 5], ['Pele', 20, 18, 20]];
 
-for (var i = 0; i < players[i].length; i++) {
+var playersRepack = [];
 
-    
-    var maradona = new Players(players[i][0], players[i][0], players[i][0], players[i][0]);
+for (var i = 0; i < players.length; i++) {
 
+    playersRepack[playersRepack.length] = new Players(players[i][0], players[i][1], players[i][2], players[i][3]);
+   
 }
 
-console.log(maradona);
+console.log(playersRepack);
 
 // TASK 4:
 
 // Create a construction function that should contain properties for first number, second number, and method. Then create a four instances of object from that constructor, each with different numbers, and different method. First should have method for multiplying of its own numbers, second for dividing, third for adding and fourth for subtracting.
+
+//SOLUTION
+
+function NumOperation(a, b, c) {
+    this.firstNum = a;
+    this.secondNum = b;
+    this.operation = c;
+}
+
+var multiplyingResult = new NumOperation(4, 4, function() {
+    return this.firstNum * this.secondNum;
+});
+
+var dividingResult = new NumOperation(20, 5, function() {
+    return this.firstNum / this.secondNum;
+});
+
+var addingResult = new NumOperation(50, 20, function() {
+    return this.firstNum + this.secondNum;
+});
+
+var substractingResult = new NumOperation(100, 18, function() {
+    return this.firstNum - this.secondNum;
+});
+
+console.log(multiplyingResult, dividingResult, addingResult, substractingResult);
+console.log(multiplyingResult.operation(), dividingResult.operation(), addingResult.operation(), substractingResult.operation());
 
 // TASK 5:
 
@@ -103,21 +131,27 @@ console.log(maradona);
 
 // 	What is result?
 
-// 		var a = 1; 
+/*
+		var a = 1; 
 
-// 		function someFunction(number) {
-// 		  function otherFunction(input) {
-// 		    return a;
-// 		  }
+		function someFunction(number) {
 		  
-// 		  a = 5;
+            function otherFunction(input) {
+		    return a;
+		    }
 		  
-// 		  return otherFunction;
-// 		}
+		    a = 5;
+		  
+		    return otherFunction;
 
-// 		var firstResult = someFunction(9);
-// 		var result = firstResult(2);
+		}
 
+		var firstResult = someFunction(9);
+
+		var result = firstResult(2);
+
+        console.log(result);
+*/
 
 // 	QUESTION 3:
 
@@ -136,6 +170,7 @@ console.log(maradona);
 
 // 		console.log(obj.prop.getFullname());
 
+
 // 		var test = obj.prop.getFullname;
 
 // 		console.log(test());
@@ -145,12 +180,17 @@ console.log(maradona);
 
 // 	What will you see in the console for the following example?
 
-// 		var a = 1; 
-// 		function b() { 
-// 		    a = 10; 
-// 		    return; 
-// 		    function a() {} 
-// 		} 
-// 		b(); 
-// 		console.log(a);
+		// var a = 1;
+        
+		// function b() { 
+		//     a = 10; 
+		//     return; 
+		//     function a() {
+
+        //     } 
+		// } 
+
+		// b(); 
+
+		// console.log(a);
 
